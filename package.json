@@ -1,0 +1,20 @@
+{
+  "name": "agent",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node src",
+    "start:dev": "nodemon --watch src/ src/index.js"
+  },
+  "dependencies": {
+    "dotenv": "^8.0.0",
+    "koa": "^2.7.0",
+    "koa-router": "^7.4.0",
+    "mongoose": "^5.5.15",
+    "nodemon": "^1.19.1"
+  },
+  "devDependencies": {
+    "@types/koa-router": "^7.0.40"
+  }
+}
