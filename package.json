@@ -8,13 +8,20 @@
     "start:dev": "nodemon --watch src/ src/index.js"
   },
   "dependencies": {
+    "@ffmpeg-installer/ffmpeg": "^1.0.18",
     "dotenv": "^8.0.0",
+    "fluent-ffmpeg": "^2.1.2",
     "koa": "^2.7.0",
     "koa-router": "^7.4.0",
+    "koa-stream": "^0.2.0",
+    "mkdirp": "^0.5.1",
     "mongoose": "^5.5.15",
-    "nodemon": "^1.19.1"
+    "nodemon": "^1.19.1",
+    "youtube-dl": "^2.0.0"
   },
   "devDependencies": {
-    "@types/koa-router": "^7.0.40"
+    "@types/fluent-ffmpeg": "^2.1.9",
+    "@types/koa-router": "^7.0.40",
+    "@types/youtube-dl": "^1.12.2"
   }
 }
