@@ -25,7 +25,7 @@ exports.download = async ctx => {
 
 exports.play = ctx => {
     const {id} = ctx.params;
-    const music = path.join(downloadPath, 'xxx.mp3');
+    const music = path.join(downloadPath, `${id}.mp3`);
     const stat = fs.statSync(music);
 
     ctx.set('Content-Type', 'audio/mpeg');

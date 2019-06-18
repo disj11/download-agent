@@ -18,17 +18,21 @@ function download(id, options = {
         );
 
         video.on('info', info => {
-            let filename = info._filename;
-            filename = filename
+            const filename = id;
+            let originalFilename = info._filename;
+            originalFilename = originalFilename
                 .replace('.mp4', '')
-                .substring(0, filename.length - 16);
+                .substring(0, originalFilename.length - 16);
+
             const filepath = path.join(options.path, `${filename}.${format}`);
             exist(filepath, doesExist => {
                 const videoObj = {
+                    originalName: originalFilename,
                     name: filename,
                     id,
                     downloading: false,
-                    format
+                    format,
+                    filepath
                 };
 
                 if (!doesExist) {
@@ -36,6 +40,7 @@ function download(id, options = {
                         .on('end', () => {
                             resolve(videoObj);
                         })
+                        .noVideo()
                         .toFormat(format)
                         .save(filepath);
                 } else {
